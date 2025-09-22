@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif;
+}
+
+.btn-primary {
+  background-color: #2292EF;
+  padding: 15px 20px;
+  border-radius: 20px;
+  color: white;
+  border: 1px solid #2292EF;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary:hover {
+  cursor: pointer;
+  box-shadow: rgba(255, 255, 255, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  padding: 15px 20px;
+  border-radius: 20px;
+  color: white;
+  border: 2px solid white;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  box-shadow: rgba(255, 255, 255, 0.15) 0px 5px 5px 0px;
+}
+
+.btn-secondary:hover {
+  cursor: pointer;
+  box-shadow: rgba(252, 251, 251, 0.16) 0px 10px 36px 0px, rgba(253, 253, 253, 0.06) 0px 0px 0px 1px;
+}

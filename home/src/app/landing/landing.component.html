@@ -1,0 +1,36 @@
+<div class="scroll-container">
+  <div id="home" class="section" style="background-color: #15224e;">
+    <div class="col-12 flex flex-column justify-content-center align-items-center">
+        <h1>DESENVOLVEDOR</h1>
+        <p class="blue-efect">FRONT-END ANGULAR</p>
+        <p class="subtitle">Transformando Ideias em Experiências Digitais</p>
+        <div class="col-10 flex justify-content-center mt-7">
+            <button class="btn-primary mr-4">VER PROJETOS</button>
+            <button class="btn-secondary ml-4">ENTRE EM CONTATO</button>
+        </div>
+    </div>
+  </div>
+  <div id="about_me" class="section">
+    <div class="col-10 p-0 flex flex-column md:flex-row justify-content-between">
+        <img class="img-perfil p-0 mr-2" src="../../assets/imgs/my_img.jpeg" alt="Foto de Enos">
+        <div class="col-5 p-2 mr-2 flex flex-column align-items-start justify-content-start">
+            <div class="title-about-me">{{'Sobre mim' | uppercase}}</div>
+            <p class="mb-2 p-0" *ngFor="let text of history" [innerHtml]="text" style="font-size: 16px; line-height: 22px;"></p>
+        </div>
+        <div class="col-3 p-0 timeline text-center justify-content-center">
+            <h6>EVOLUÇÃO CARREIRA</h6>
+            <div *ngFor="let item of timeline; let i = index;" class="flex flex-column align-items-center justify-content-center">
+                <div *ngIf="i > 0" [style.background-color]="item.color" style="width: 2px; height: 40px;"></div>
+                <div class="flex flex-column align-items-center justify-content-center">
+                    <div *ngIf="i > 0" [style.background-color]="item.color" style="width: 10px; height: 10px; border-radius: 50%; margin-bottom: -2px;"></div>
+                    <div [style.border-color]="item.color" style="width: 60px; height: 60px; border-radius: 50%; border: 2px solid;"></div>
+                    <div *ngIf="i < timeline.length - 1" [style.background-color]="item.color" style="width: 10px; height: 10px; border-radius: 50%; margin-top: -2px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="section" style="background-color: #5733ff;">
+    <h2>Seção 3</h2>
+  </div>
+</div>

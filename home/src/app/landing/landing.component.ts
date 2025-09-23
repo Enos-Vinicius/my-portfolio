@@ -15,11 +15,20 @@ export class LandingComponent {
     'Essa experiência me fez descobrir minha verdadeira paixão. Desde 2017, me especializo em desenvolvimento front-end, acompanhando a evolução do <b>Angular</b> e de outras tecnologias. Minha maior motivação é dar vida à identidade dos meus clientes no mundo digital, criando soluções das quais eles se sintam representados e orgulhosos.'
   ];
   timeline = [
-    {color: '#275397'},
-    {color: '#24EEF9'},
-    {color: '#DD45F9'},
-    // {color: '#f94554ff'},
-  ]
+    {id: 1, color: 'rgba(39, 83, 151, 1)', year: '2014', textLeft: '', textRight: ''},
+    {id: 2, color: 'rgba(36, 238, 249, 1)', year: '2016', textLeft: '', textRight: ''},
+    {id: 3, color: 'rgba(221, 69, 249, 1)', year: '2017', textLeft: '', textRight: ''},
+    {id: 4, color: 'rgba(69, 249, 99, 1)', year: '2017', textLeft: '', textRight: ''},
+    {id: 6, color: 'rgba(249, 141, 69, 1)', year: '2017', textLeft: '', textRight: ''},
+    {id: 7, color: 'rgba(249, 69, 144, 1)', year: '2017', textLeft: '', textRight: ''},
+    {id: 8, color: 'rgba(69, 81, 249, 1)', year: '2017', textLeft: '', textRight: ''},
+    {id: 9, color: 'rgba(249, 69, 84, 1)', year: '2017', textLeft: '', textRight: ''},
+  ];
+  stylesCurrent: { [key: string]: string } = {
+    'background-color': 'transparent',
+    'transition': 'background-color 0.3s ease'
+  };
+  selectedIndex: number | null = null;
   @HostListener('window:wheel', ['$event'])
   onScroll(event: WheelEvent) {
     if (this.isScrolling) {
@@ -52,5 +61,12 @@ export class LandingComponent {
     }
   }
 
-  
+  onMouseEnterCircle(item: any) {
+    this.selectedIndex = item.id - 1;
+    // this.stylesCurrent['background-color'] = item.color;
+  }
+
+  onMouseLeaveCircle() {
+    // this.stylesCurrent['background-color'] = 'transparent';
+  }
 }

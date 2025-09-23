@@ -1,0 +1,32 @@
+@import 'src/assets/styles/variables';
+// icons color #2BE2EE, #5d7bfd, #973ACA
+.skills {
+    width: 100vw;
+    height: 100vh;
+
+    .card {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        border-radius: 15px;
+        background-color: $primary;
+        cursor: pointer;
+
+        &-active {
+            border: 2px solid white;
+            box-shadow: rgba(248, 0, 248, 0.514) 0px 0px 10px 4px;
+        }
+
+        span {
+            color: white;
+            font-size: 16px;
+            letter-spacing: 1px;
+            font-weight: 400;
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+        }
+
+
+    }
+}

@@ -1,0 +1,38 @@
+<div class="about-me flex justify-content-center align-items-center">
+    <div class="col-10 p-0 flex flex-column md:flex-row justify-content-between">
+        <img class="img-perfil p-0 mr-2" src="../../assets/imgs/my_img.jpeg" alt="Foto de Enos">
+        <div class="col-5 p-2 mr-2 flex flex-column align-items-start justify-content-start">
+            <div class="title-about-me">{{'Sobre mim' | uppercase}}</div>
+            <p class="mb-2 p-0" *ngFor="let text of history" [innerHtml]="text" style="font-size: 16px; line-height: 22px;"></p>
+        </div>
+        <div class="col-3 p-0 timeline text-center justify-content-center">
+            <h6>EVOLUÇÃO CARREIRA</h6>
+            <div class="container mb-6">
+                <div *ngFor="let item of timeline; let i = index;" class="flex flex-column align-items-center justify-content-center relative">
+                <span class="legend-left">{{item.textLeft}}</span>
+                <span class="legend-right">{{item.textRight}}</span>
+                    <div *ngIf="i > 0" class="col-6 p-0 flex justify-content-center">
+                    <div 
+                        [style.background-image]="'linear-gradient(to bottom,' + timeline[i - 1].color + ',' + timeline[i].color + ')'" 
+                        style="width: 1px; height: 40px;"
+                        ></div>
+                    </div>
+                    <div class="flex flex-column align-items-center justify-content-center">
+                        <div *ngIf="i > 0" [style.background-color]="item.color" style="width: 8px; height: 8px; border-radius: 50%; margin-bottom: -2px;"></div>
+                        <div 
+                        class="flex justify-content-center align-items-center" 
+                        [style.border-color]="item.color" 
+                        [style.box-shadow]="item.color === stylesCurrent['background-color'] ? item.color + '0px 1px 10px 1px' : item.color + '0px 1px 5px 1px'"
+                        [ngStyle]="item.color === stylesCurrent['background-color'] ? stylesCurrent : []"
+                        (mouseenter)="onMouseEnterCircle(item)"
+                        (mouseleave)="onMouseLeaveCircle()"
+                        style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid;">
+                        <span style="font-size: 11px; font-weight: bold; color: rgba(255, 255, 255, 0.7)">{{item.year}}</span>
+                        </div>
+                        <div *ngIf="i < timeline.length - 1" [style.background-color]="item.color" style="width: 8px; height: 8px; border-radius: 50%; margin-top: -2px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

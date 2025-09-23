@@ -1,4 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'assets/styles/variables';
+
 html, body {
   margin: 0;
   padding: 0;
@@ -37,7 +38,6 @@ html, body {
   box-shadow: rgba(252, 251, 251, 0.16) 0px 10px 36px 0px, rgba(253, 253, 253, 0.06) 0px 0px 0px 1px;
 }
 
-
 /* width */
 ::-webkit-scrollbar {
   width: 5px;
@@ -46,7 +46,7 @@ html, body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #131c36;
+  background: $primary;
 }
 
 /* Handle */

@@ -8,6 +8,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ServicesComponent } from './services/services.component';
 import { ContactComponent } from './contact/contact.component';
 import { LandingComponent } from './landing.component';
+import { ObjectKeysPipe } from 'src/shared/pipes/object-keys.pipe';
 
 
 
@@ -19,7 +20,8 @@ import { LandingComponent } from './landing.component';
     SkillsComponent,
     ProjectsComponent,
     ServicesComponent,
-    ContactComponent
+    ContactComponent,
+    ObjectKeysPipe 
   ],
   imports: [
     CommonModule,

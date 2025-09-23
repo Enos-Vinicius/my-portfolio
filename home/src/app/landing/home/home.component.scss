@@ -1,7 +1,8 @@
 .home {
     width: 100vw;
     height: 100vh;
-    background-color: #15224e;
+    background-image: url('../../../assets/imgs/6106991.jpg');
+    background-size: 100% auto;
     margin: 0;
     
     h1 {
@@ -10,6 +11,7 @@
         font-weight: 600;
         font-size: 78px;
         line-height: 0px;
+        z-index: 1;
     }
     
     .blue-efect {
@@ -23,12 +25,26 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         color: black;
+        z-index: 1;
     }
 
     .subtitle {
         font-size: 24px;
         line-height: 0;
         color: white;
+        z-index: 1;
     }
 
+}
+
+.home::before {
+  /* 2. Crie a película com o pseudo-elemento */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Cor preta (0,0,0) com 50% de transparência (0.5) */
+  z-index: 1; /* Garante que a película fique por cima da imagem */
 }

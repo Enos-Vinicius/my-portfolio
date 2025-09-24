@@ -17,60 +17,18 @@
             </div>
 
             <div class="col-4 md:col-4 lg:col-4 p-0 flex flex-column align-items-start">
-
-
-                <p class="title m-0">{{'Proeficiência em:' | uppercase}} {{getSelectd().title | uppercase}}</p>
-
-                <div class="col-12 p-0 flex align-items-center justify-content-between mt-5">
+                <p class="title m-0">{{'Proeficiência em:' | uppercase}} {{itemSelected.title | uppercase}}</p>
+                <div *ngFor="let item of itemSelected.proficiency | objectKeys" class="col-12 p-0 flex align-items-center justify-content-between mt-5">
                     <div class="col-10 p-0 flex align-items-center">
                         <div class="flex col-10 p-0">
                             <div class="bar-up" 
-                                [style.background-color]="getSelectd().primary"
-                                [style.width]="getSelectd().proficiency.time + '0%'"></div>
+                                [style.background-color]="itemSelected.primary"
+                                [style.width]="itemSelected.proficiency[item] + '0%'"></div>
                             <div class="low-bar col p-0" ></div>
                         </div>
-                        <p class="title-bar ml-2">Tempo</p>
+                        <p class="title-bar ml-2" title="{{translateProefycince(item)[1]}}">{{translateProefycince(item)[0]}}</p>
                     </div>
-                    <p class="title-bar">{{getSelectd().proficiency.time}}0%</p>
-                </div>
-
-                <div class="col-12 p-0 flex align-items-center justify-content-between mt-5">
-                    <div class="col-10 p-0 flex align-items-center">
-                        <div class="flex col-10 p-0">
-                            <div class="bar-up" 
-                                [style.background-color]="getSelectd().primary"
-                                [style.width]="getSelectd().proficiency.depth + '0%'"></div>
-                            <div class="low-bar col p-0" ></div>
-                        </div>
-                        <p class="title-bar ml-2">Profundidade</p>
-                    </div>
-                    <p class="title-bar">{{getSelectd().proficiency.depth}}0%</p>
-                </div>
-
-                <div class="col-12 p-0 flex align-items-center justify-content-between mt-5">
-                    <div class="col-10 p-0 flex align-items-center">
-                        <div class="flex col-10 p-0">
-                            <div class="bar-up" 
-                                [style.background-color]="getSelectd().primary"
-                                [style.width]="getSelectd().proficiency.frequency + '0%'"></div>
-                            <div class="low-bar col p-0" ></div>
-                        </div>
-                        <p class="title-bar ml-2">Frequência</p>
-                    </div>
-                    <p class="title-bar">{{getSelectd().proficiency.frequency}}0%</p>
-                </div>
-
-                <div class="col-12 p-0 flex align-items-center justify-content-between mt-5">
-                    <div class="col-10 p-0 flex align-items-center">
-                        <div class="flex col-10 p-0">
-                            <div class="bar-up" 
-                                [style.background-color]="getSelectd().primary"
-                                [style.width]="getSelectd().proficiency.contribution + '0%'"></div>
-                            <div class="low-bar col p-0" ></div>
-                        </div>
-                        <p class="title-bar ml-2">Contribuição</p>
-                    </div>
-                    <p class="title-bar">{{getSelectd().proficiency.frequency}}0%</p>
+                    <p class="title-bar">{{itemSelected.proficiency[item]}}0%</p>
                 </div>
             </div>
 

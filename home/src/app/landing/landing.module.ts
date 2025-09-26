@@ -9,6 +9,7 @@ import { ServicesComponent } from './services/services.component';
 import { ContactComponent } from './contact/contact.component';
 import { LandingComponent } from './landing.component';
 import { ObjectKeysPipe } from 'src/shared/pipes/object-keys.pipe';
+import { SharedModule } from 'src/shared/shared.module';
 
 
 
@@ -21,11 +22,12 @@ import { ObjectKeysPipe } from 'src/shared/pipes/object-keys.pipe';
     ProjectsComponent,
     ServicesComponent,
     ContactComponent,
-    ObjectKeysPipe 
+    ObjectKeysPipe
   ],
   imports: [
     CommonModule,
-    LandingRoutingModule
+    LandingRoutingModule,
+    SharedModule
   ]
 })
 export class LandingModule { }

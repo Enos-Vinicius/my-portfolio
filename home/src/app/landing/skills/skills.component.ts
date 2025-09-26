@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.scss']
 })
-export class SkillsComponent implements OnInit {
+export class SkillsComponent implements OnInit, OnDestroy {
   cards = [
-    {proficiency: {time: 9,  depth: 5, frequency: 7, contribution: 5}, primary:'rgb(248, 0, 248)', active: true, title: 'Angular', icon: '../../assets/imgs/icons/angular.png'},
+    {proficiency: {time: 9,  depth: 5, frequency: 7, contribution: 5}, primary:'rgb(248, 0, 248)', active: true, title: 'Angular 2+', icon: '../../assets/imgs/icons/angular.png'},
     {proficiency: {time: 10, depth: 7, frequency: 3, contribution: 2}, primary:'rgb(163, 237, 186)', active: false, title: 'Highcharts', icon: '../../assets/imgs/icons/highcharts.svg'},
     {proficiency: {time: 8, depth: 8, frequency: 10, contribution: 5}, primary:'rgb(151, 58, 202)', active: false, title: 'PrimeNG', icon: '../../assets/imgs/icons/primeng.svg'},
     {proficiency: {time: 7, depth: 6, frequency: 9, contribution: 2}, primary:'rgb(0, 170, 255)', active: false, title: 'OpenLayers', icon: '../../assets/imgs/icons/ol.svg'},
@@ -24,10 +24,15 @@ export class SkillsComponent implements OnInit {
     {proficiency: {time: 8, depth: 6, frequency: 5, contribution: 2}, primary:'rgb(247, 154, 32)', active: false, title: 'Google Analytics', icon: '../../assets/imgs/icons/ga.png'},
   ];
 
-  itemSelected: any;
+  public itemSelected: any;
+  private currentIndex: number = 0;
+  private intervalId: any;
+  readonly INTERVAL_TIME_MS: number = 2000;
+  public loadChart: boolean = false;
 
   ngOnInit(): void {
     this.getSelectd();
+    this.startAutoChange();
   }
 
   getSelectd(){
@@ -35,6 +40,7 @@ export class SkillsComponent implements OnInit {
   }
 
   setCard(cardTitle: string){
+    clearInterval(this.intervalId);
     this.cards.forEach(card => {
       card.active = card.title === cardTitle;
     });
@@ -57,4 +63,29 @@ export class SkillsComponent implements OnInit {
     }
   }
 
+  ngOnDestroy() {
+    this.stopAutoChange();
+  }
+
+  startAutoChange(): void {
+    const initialActiveIndex = this.cards.findIndex(card => card.active);
+    this.currentIndex = initialActiveIndex !== -1 ? initialActiveIndex : 0;
+    
+    this.intervalId = setInterval(() => {
+      this.nextCard();
+    }, this.INTERVAL_TIME_MS);
+  }
+
+  stopAutoChange(): void {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
+  }
+
+  nextCard(): void {
+    this.cards[this.currentIndex].active = false;
+    this.currentIndex = (this.currentIndex + 1) % this.cards.length;
+    this.cards[this.currentIndex].active = true;
+    this.getSelectd();
+  }
 }

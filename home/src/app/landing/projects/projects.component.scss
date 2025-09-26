@@ -1,0 +1,80 @@
+.projects {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../../assets/imgs/6106991.jpg');
+    background-size: 100% auto;
+}
+
+.projects-p {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+
+  .title {
+    color: #FFF;
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 120px;
+  }
+
+  .full-card {
+    height: 600px;
+    background-color: rgba(255,255,255,0.9);
+    // border: 1px solid #198DDB;
+    border-radius: 15px !important;
+    position: relative;
+
+    .header {
+      width: 100%; 
+      height: 40px; 
+      background-color: white; 
+      border-radius: 15px 15px 0 0; 
+      color: #141D39;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    i {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .background-project {
+      width: 97%;
+      height: 250px;
+      background-size: 100% auto;
+      background-position: start;
+      background-repeat: no-repeat;
+      border-radius: 15px;
+    }
+  }
+
+  .title-card {
+    color: #FFF;
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+}
+
+.p-carousel-item-end .card-item:not(.p-carousel-item-active) {
+  opacity: 0.5; 
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.p-carousel-item-start .card-item:not(.p-carousel-item-active) {
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+@media (max-width: 767px) {
+  .projects-p {
+    .title {
+      margin-top: 50px;
+    }
+  }
+}

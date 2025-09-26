@@ -3,7 +3,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow: auto;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -60,4 +60,39 @@ html, body {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #f1f1f1;
+}
+
+@media (min-width: 768px) {
+  html, body {
+    /* Desabilita a rolagem para ativar o scroll hijacking em desktop */
+    overflow: hidden;
+  }
+}
+
+/* Usando o seletor do seu componente como prefixo */
+.p-carousel .p-carousel-content .p-carousel-prev, .p-carousel .p-carousel-content .p-carousel-next {
+  font-size: 4.5rem;
+  color: white;
+  .p-icon {
+    width: 3rem;
+    height: 2rem;
+  }
+}
+
+.p-carousel .p-carousel-content .p-carousel-next:hover {
+  background-color: transparent !important;
+  color: white !important;
+}
+
+.p-carousel .p-carousel-indicators .p-carousel-indicator button {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  margin: 0 0.4rem;
+  background-color: #ccc;
+  border: none; 
+}
+
+.p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+  background-color: #007bff;
 }

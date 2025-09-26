@@ -1,1 +1,22 @@
-<p>projects works!</p>
+<div class="projects">
+    <div class="projects-p flex justify-content-center">
+        <div class="col-12 md:col-11 p-0">
+            <h2 class="title ml-4 md:ml-7">{{'Portfólio / Projetos' | uppercase}}</h2>
+            <p-carousel class="col-12 p-0 carousel" [value]="projects" [responsiveOptions]="responsiveOptions" [numVisible]="4" [numScroll]="4" orientation="horizontal" [circular]="false">
+                <ng-template let-card pTemplate="item">
+                    <div class="pl-4">
+                        <div class="full-card shadow-2">
+                            <div class="flex justify-content-center align-items-center header">
+                                {{card.title}}
+                                <i class="pi pi-external-link" (click)="sendLink(card.link)"></i>
+                            </div>
+                            <div class="flex justify-content-center align-items-center">
+                                <div class="background-project" [style.background-image]="'url(' + card.img + ')'"></div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </p-carousel>
+        </div>
+    </div>
+</div>

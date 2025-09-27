@@ -19,6 +19,7 @@
   }
 
   .full-card {
+    max-width: 500px;
     height: 600px;
     background-color: rgba(255,255,255,0.9);
     // border: 1px solid #198DDB;
@@ -46,10 +47,28 @@
     .background-project {
       width: 97%;
       height: 250px;
-      background-size: 100% auto;
+      background-size: auto 100%;
       background-position: start;
       background-repeat: no-repeat;
       border-radius: 15px;
+      margin-top: 10px;
+    }
+
+    .img-project {
+      width: 97%;
+      height: 250px;
+      background-size: 90% auto;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 15px;
+      background-color: white;
+      margin-top: 10px;
+    }
+
+    .img-project::before {
+      width: 97%;
+      width: 250px;
+      background-color: white;
     }
   }
 
@@ -59,6 +78,22 @@
     font-weight: bold;
   }
 
+  .legend {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #141D39;
+  }
+
+  .year {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    color: #141D39;
+  }
 }
 
 .p-carousel-item-end .card-item:not(.p-carousel-item-active) {

@@ -8,15 +8,16 @@
                         <div class="full-card shadow-2">
                             <div class="flex justify-content-center align-items-center header">
                                 {{card.title}}
-                                <i class="pi pi-external-link" (click)="sendLink(card.link)"></i>
+                                <i class="icon-url pi pi-external-link" (click)="sendLink(card.link)"></i>
                             </div>
                             <div class="flex justify-content-center align-items-center">
                                 <div class="{{card.class}}" [style.background-image]="'url(' + card.img + ')'"></div>
                             </div>
                             <div class="col-12 p-0 flex justify-content-center">
-                                <div class="col-12 p-3 legend">{{card.description}}</div>
+                                <div class="col-12 p-3 legend" [innerHtml]="card.description"></div>
                             </div>
                             <div class="year">Ano de Atuação: {{card.year}}</div>
+                            <i class="icon-squad" [class]="card.icon" [pTooltip]="card.tooltip"></i>
                         </div>
                     </div>
                 </ng-template>

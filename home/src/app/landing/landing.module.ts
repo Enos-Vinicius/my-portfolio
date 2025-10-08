@@ -10,6 +10,7 @@ import { ContactComponent } from './contact/contact.component';
 import { LandingComponent } from './landing.component';
 import { ObjectKeysPipe } from 'src/shared/pipes/object-keys.pipe';
 import { SharedModule } from 'src/shared/shared.module';
+import { ThreeBackgroundComponent } from './three-background/three-background.component';
 
 
 
@@ -22,7 +23,8 @@ import { SharedModule } from 'src/shared/shared.module';
     ProjectsComponent,
     ServicesComponent,
     ContactComponent,
-    ObjectKeysPipe
+    ObjectKeysPipe,
+    ThreeBackgroundComponent
   ],
   imports: [
     CommonModule,

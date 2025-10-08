@@ -1,1 +1,17 @@
-<p>services works!</p>
+<div class="services">
+    <h3 class="mt-6 md:mt-0 pl-4 pr-4">{{'O que eu faço' | uppercase}}</h3>
+    <div class="col-12 pl-4 pr-4">
+        <div class="grid">
+            <div class="col-12 md:col-6 lg:col-4 xl:col-3" *ngFor="let item of services">
+                <div class="card flex flex-column justify-content-center align-items-center">
+                    <i 
+                        [class]="item.icon" 
+                        [style.color]="item.color"
+                        [ngStyle]="{'box-shadow' : '0px 0px 10.5px' + item.color}"
+                        ></i>
+                    <p class="title">{{item.title}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

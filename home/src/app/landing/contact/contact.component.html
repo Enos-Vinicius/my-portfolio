@@ -1,1 +1,39 @@
-<p>contact works!</p>
+<div class="contact col-12 p-0 flex justify-content-center align-items-center">
+    <div class="col-11 md:col-10 lg:col-5 p-0 container flex align-items-start justify-content-between">
+        <div class="col-6 flex flex-column align-items-start">
+            <h1 class="title">{{'Contato' | uppercase}}</h1>
+            <div class="col-12 flex flex-column p-0">
+                <mat-form-field appearance="outline">
+                   <mat-label>Nome</mat-label>
+                   <input matInput placeholder="Placeholder">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                   <mat-label>Email</mat-label>
+                   <input matInput placeholder="Placeholder">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                   <mat-label>Mensagem</mat-label>
+                   <textarea matInput rows="7"></textarea>
+                </mat-form-field>
+                <button class="btn-primary">ENVIAR MENSAGEM</button>
+            </div>
+        </div>
+        <div class="col-5 flex flex-column align-items-start justify-content-center">
+            <h2>SIGA-ME</h2>
+            <div class="col-12 p-0 flex align-items-center justify-content-start mb-3">
+                <img src="../../../assets/imgs/icons/linkedin.svg" alt="" width="30" height="30">
+                <a class="text-redes" href="https://www.linkedin.com/in/enos-silva-b15555a9/" target="_blank">Linkedin</a>
+            </div>
+            <div class="col-12 p-0 flex align-items-center justify-content-start mb-3">
+                <img src="../../../assets/imgs/icons/instagram.png" alt="" width="30" height="30">
+                <a class="text-redes" href="https://www.instagram.com/enosvinicius/" target="_blank">Instagram</a>
+            </div>
+            <div class="col-12 p-0 flex align-items-center justify-content-start mb-3">
+                <img src="../../../assets/imgs/icons/github.png" alt="" width="30" height="30">
+                <a class="text-redes" href="https://github.com/Enos-Vinicius" target="_blank">GitHub</a>
+            </div>
+            <div class="mapa"></div>
+            <div class="legenda mt-2">Área de Atuação: Global / Remoto</div>
+        </div>
+    </div>
+</div>

@@ -6,16 +6,17 @@
     h1 {
         color: white;
         letter-spacing: 1px;
-        font-weight: 600;
+        font-weight: 500;
         font-size: 78px;
-        line-height: 0px;
+        line-height: 90px;
         z-index: 1;
+        margin: 0;
     }
     
     .blue-efect {
         font-size: 70px;
         font-weight: 600;
-        line-height: 70px;
+        line-height: 80px;
         letter-spacing: 1px;
         margin: -10px 0 10px 0;
         background-image: linear-gradient(to right, #5278EB, #1FB5EA, #268DEF);
@@ -28,9 +29,13 @@
 
     .subtitle {
         font-size: 24px;
-        line-height: 0;
+        line-height: 26px;
         color: white;
         z-index: 1;
+    }
+
+    p {
+        margin: 0;
     }
 
 }
